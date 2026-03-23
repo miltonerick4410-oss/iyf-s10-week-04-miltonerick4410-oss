@@ -1,7 +1,7 @@
-// ===== Calculator =====
-function calculate(operator) {
-  let num1 = Number(document.getElementById("num1").value);
-  let num2 = Number(document.getElementById("num2").value);
+function calculate() {
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  let operator = document.getElementById("operator").value;
   let result;
 
   if (operator === "+") result = num1 + num2;
@@ -11,25 +11,29 @@ function calculate(operator) {
 
   document.getElementById("result").innerText = "Result: " + result;
 }
+}
 
 
-// ===== Grade Tracker =====
-function addStudent() {
-  let name = document.getElementById("studentName").value;
-  let marks = Number(document.getElementById("marks").value);
+const students = [
+  { name: "John", score: 85 },
+  { name: "Mary", score: 60 },
+  { name: "Alex", score: 72 }
+];
 
-  let grade;
+function showGrades() {
+  let output = "";
 
-  if (marks >= 80) grade = "A";
-  else if (marks >= 70) grade = "B";
-  else if (marks >= 60) grade = "C";
-  else if (marks >= 50) grade = "D";
-  else grade = "F";
+  students.forEach(student => {
+    let grade;
 
-  let list = document.getElementById("studentList");
+    if (student.score >= 80) grade = "A";
+    else if (student.score >= 70) grade = "B";
+    else if (student.score >= 60) grade = "C";
+    else grade = "D";
 
-  let li = document.createElement("li");
-  li.innerText = name + " - " + marks + " (" + grade + ")";
+    output += student.name + ": " + grade + "<br>";
+  });
 
-  list.appendChild(li);
+  document.getElementById("grades").innerHTML = output;
+}
 }

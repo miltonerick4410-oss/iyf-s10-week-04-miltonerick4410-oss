@@ -1,37 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Calculator + Grade Tracker</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<h2>Calculator</h2>
 
-  <h1>Calculator</h1>
-  <div class="calculator">
-    <input type="number" id="num1" placeholder="Number 1">
-    <input type="number" id="num2" placeholder="Number 2">
+<input type="number" id="num1" placeholder="First number">
+<input type="number" id="num2" placeholder="Second number">
 
-    <button onclick="calculate('+')">+</button>
-    <button onclick="calculate('-')">-</button>
-    <button onclick="calculate('*')">*</button>
-    <button onclick="calculate('/')">/</button>
+<select id="operator">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
 
-    <h3 id="result">Result: </h3>
-  </div>
+<button onclick="calculate()">Calculate</button>
 
-  <hr>
+<p id="result"></p>
 
-  <h1>Student Grade Tracker</h1>
-  <div class="grades">
-    <input type="text" id="studentName" placeholder="Student Name">
-    <input type="number" id="marks" placeholder="Marks">
 
-    <button onclick="addStudent()">Add</button>
+<h2>Grade Tracker</h2>
 
-    <ul id="studentList"></ul>
-  </div>
+<button onclick="showGrades()">Show Grades</button>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<p id="grades"></p>
